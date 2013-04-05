@@ -1,0 +1,27 @@
+<!DOCTYPE heml>
+<html>
+<head>
+  <title><%= @title%></title>
+  	
+	
+	<meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="/css/custom.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+
+  <div id="nav">
+    <a href="/new">New</a> | <a href="/list">List</a>
+  </div>
+
+  <%= yield %>
+
+  <div id="debug">
+    <p>The time is <%= Time.now.strftime("%u:%M:%S  %p") %>.</p>
+    <p>Sinatra version <%= Sinatra::VERSION %>.</p>
+  </div>
+
+</body>
+<html>
