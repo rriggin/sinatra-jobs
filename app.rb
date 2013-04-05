@@ -1,9 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
-require 'dm-sqlite-adapter'
-require 'pg'
-require 'dm-postgres-adapter'
 
 # Set up Database Connections.  Using SQLite3 Locally & Postgres on Heroku.
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/kciodev.db")
