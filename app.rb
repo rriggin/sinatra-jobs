@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 
-# Set up Database Connections.  Using SQLite3 Locally & Postgres on Heroku.
+# Set up Database Connection
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
 
 class Job
@@ -19,10 +19,8 @@ class Job
 
   end
 
-configure :development do
 # Create or upgrade all tables at once
 DataMapper.auto_upgrade!
-end
 
 # set utf-8 for outgoing
 
