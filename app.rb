@@ -3,7 +3,7 @@ require 'sinatra'
 require 'data_mapper'
 
 # Set up Database Connections.  Using SQLite3 Locally & Postgres on Heroku.
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/kciodev.db")
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev.db')
 
 class Job
 
