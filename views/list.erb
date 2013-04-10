@@ -10,7 +10,6 @@
           <th>Job Description</th>
           <th>Website</th>
           <th>Actions</th>
-          <th style="width: 50px;"></th>
         </tr>
       </thead>
       <tbody>
@@ -22,10 +21,9 @@
             <td><%= job.company %></td>
             <td><%= job.description %></td>
             <td><a href="http://<%= job.website %>"><%= job.website %></a></td>
-            <td><a href="/show/<%= job.id %>">View</a>|<a href="mailto:#">Apply</a></td>
             <td>
+              <a href="mailto:#"> Apply</a>
               <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
             </td>
           <% end %>
         </tr>
