@@ -37,7 +37,7 @@ end
 
 # view a list of jobs
 get '/list' do
-  @title = "Jobs List"
+  @title = "Job List"
   @jobs = Job.all(:order => [:created_at.desc])
   erb :list
 end
@@ -67,6 +67,7 @@ end
 
 # view a job by id
 get '/show/:id' do
+  @title = "Job Details"
   @job = Job.get(params[:id])
   if @job
     erb :show

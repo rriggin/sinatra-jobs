@@ -1,4 +1,4 @@
-<!DOCTYPE heml>
+<!DOCTYPE html>
 <html>
 <head>
   <title><%= @title%></title>
@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="/css/custom.css" rel="stylesheet" media="screen">
 
 </head>
@@ -16,9 +16,14 @@
 
   <div class="container">
 
-    <div id="header">
-      <a href="/"><img src="img/logo.png" height="100" width="250"/></a><br>
-      <a href="/new">New</a> | <a href="/list">List</a>
+    <div class="row-fluid">
+        <div class="span4">
+            <a href="/"><img src="/img/logo.png" height="100" width="250"/></a><br>
+        </div>
+
+        <div class="span8">
+            <a href="/new">Post a Job</a> | <a href="/list">View All</a>
+        </div>
     </div>
 
     <%= yield %>

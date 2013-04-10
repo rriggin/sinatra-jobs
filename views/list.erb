@@ -1,4 +1,4 @@
-<h1>Jobs List</h1>
+<h1>Job List</h1>
 
 <div>
     <table class="table">
@@ -16,13 +16,13 @@
       <tbody>
         <tr>
           <% @jobs.each_with_index do |job,i| %>
-            <tr<%= 'class="alt"' if i%2==0 %>>
+            <tr<%= 'class="alt"' if i%10==0 %>>
             <td><a href="/show/<%= job.id %>"><%= job.id %></a></td>
-            <td><%= job.title %></a></td>
+            <td><a href="/show/<%= job.id %>"><%= job.title %></a></td>
             <td><%= job.company %></td>
             <td><%= job.description %></td>
             <td><a href="http://<%= job.website %>"><%= job.website %></a></td>
-            <td><a href="/show/<%= job.id %>">View</a> &nbsp; | &nbsp; <a href="mailto:#">Apply</a></td>
+            <td><a href="/show/<%= job.id %>">View</a>|<a href="mailto:#">Apply</a></td>
             <td>
               <a href="user.html"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
