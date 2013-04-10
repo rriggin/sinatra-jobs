@@ -37,14 +37,14 @@ end
 
 # view a list of jobs
 get '/list' do
-  @page_title = "Jobs List"
+  @title = "Jobs List"
   @jobs = Job.all(:order => [:created_at.desc])
   erb :list
 end
 
 # create a new job 
 get '/new' do
-  @title = "Post New Job"
+  @title = "Post a New Job"
   erb :new
 end
 

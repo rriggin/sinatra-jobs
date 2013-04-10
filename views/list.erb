@@ -2,93 +2,37 @@
 
 <div>
     <table class="table">
-        <tbody>
-          <% @jobs.each_with_index do |job,i| %>
-            <tr<%= ' class="alt"' if i%2==0 %>>
-            <td><a href="/show/<%= job.id %>"><%= job.title %></a></td>
-            <td><a href="/delete/<%= job.id %>">delete</a></td>
-          <% end %>
-        </tbody>
-    </table>
-</div>
-
-<div>
-    <table class="table">
       <thead>
         <tr>
+          <th>Job ID</th>
           <th>Title/Role</th>
           <th>Company</th>
+          <th>Job Description</th>
           <th>Website</th>
-          <th>Description</th>
-          <th>Contact</th>
-          <th style="width: 36px;"></th>
+          <th>Actions</th>
+          <th style="width: 50px;"></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Tompson</td>
-          <td>the_mark7</td>
-          <td>
+          <% @jobs.each_with_index do |job,i| %>
+            <tr<%= 'class="alt"' if i%2==0 %>>
+            <td><a href="/show/<%= job.id %>"><%= job.id %></a></td>
+            <td><%= job.title %></a></td>
+            <td><%= job.company %></td>
+            <td><%= job.description %></td>
+            <td><a href="http://<%= job.website %>"><%= job.website %></a></td>
+            <td><a href="/show/<%= job.id %>">View</a> &nbsp; | &nbsp; <a href="mailto:#">Apply</a></td>
+            <td>
               <a href="user.html"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Ashley</td>
-          <td>Jacobs</td>
-          <td>ash11927</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Audrey</td>
-          <td>Ann</td>
-          <td>audann84</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>John</td>
-          <td>Robinson</td>
-          <td>jr5527</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Aaron</td>
-          <td>Butler</td>
-          <td>aaron_butler</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Chris</td>
-          <td>Albert</td>
-          <td>cab79</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
+            </td>
+          <% end %>
         </tr>
       </tbody>
     </table>
 </div>
-<div class="pagination">
+<!--<div class="pagination">
     <ul>
         <li><a href="#">Prev</a></li>
         <li><a href="#">1</a></li>
@@ -97,7 +41,7 @@
         <li><a href="#">4</a></li>
         <li><a href="#">Next</a></li>
     </ul>
-</div>
+</div>-->
 <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

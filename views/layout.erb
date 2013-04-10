@@ -14,18 +14,20 @@
 </head>
 <body>
 
-  <div id="nav">
-    <a href="/"><img src="img/logo.png" height="150" width="200"/></a><br></br>
-    <a href="/new">New</a> | <a href="/list">List</a>
+  <div class="container">
+
+    <div id="header">
+      <a href="/"><img src="img/logo.png" height="100" width="250"/></a><br>
+      <a href="/new">New</a> | <a href="/list">List</a>
+    </div>
+
+    <%= yield %>
+
+    <div id="debug">
+      <p>The time is <%= Time.now.strftime("%u:%M:%S  %p") %>.</p>
+      <p>Sinatra version <%= Sinatra::VERSION %>.</p>
+    </div>
   </div>
-
-  <%= yield %>
-
-  <div id="debug">
-    <p>The time is <%= Time.now.strftime("%u:%M:%S  %p") %>.</p>
-    <p>Sinatra version <%= Sinatra::VERSION %>.</p>
-  </div>
-
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
