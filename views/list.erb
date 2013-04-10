@@ -6,7 +6,7 @@
           <% @jobs.each_with_index do |job,i| %>
             <tr<%= ' class="alt"' if i%2==0 %>>
             <td><a href="/show/<%= job.id %>"><%= job.title %></a></td>
-            <td><a href="/delete/<%= job.id %>">delete</a></td>
+            <!--<td><a href="/delete/<%= job.id %>">delete</a></td>-->
           <% end %>
         </tbody>
     </table>

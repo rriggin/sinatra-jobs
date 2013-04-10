@@ -5,6 +5,7 @@ require 'data_mapper'
 # Set up Database Connection
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
 
+
 class Job
 
   include DataMapper::Resource
@@ -28,22 +29,26 @@ before do
   headers "Content-Type" => "text/html; charset=utf-8"
 end
 
+# index page for the site
 get '/' do
   @title = "kc.io"
-  erb :welcome
+  erb :home
 end
 
+# view a list of jobs
 get '/list' do
   @page_title = "Jobs List"
   @jobs = Job.all(:order => [:created_at.desc])
   erb :list
 end
 
+# create a new job 
 get '/new' do
   @title = "Post New Job"
   erb :new
 end
 
+# post handler for new job
 post '/create' do
   @job = Job.new(params[:job])
   if @job.save
@@ -53,12 +58,14 @@ post '/create' do
   end
 end
 
-get '/delete/:id' do |id|
-  job = Job.get(params[:id])
-  job.destroy! 
-  redirect('/list')
-end
+# delete job
+#get '/delete/:id' do |id|
+  #job = Job.get(params[:id])
+  #job.destroy! 
+  #redirect('/list')
+#end
 
+# view a job by id
 get '/show/:id' do
   @job = Job.get(params[:id])
   if @job
