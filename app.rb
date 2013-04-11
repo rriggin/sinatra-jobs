@@ -76,3 +76,14 @@ get '/show/:id' do
   end
 end
 
+# create a user account 
+get '/signup' do
+  @title = "kcio Signup"
+  erb :register
+end
+
+# login to a user account
+get '/login' do
+  @title = "kcio Login"
+  erb :login
+end
