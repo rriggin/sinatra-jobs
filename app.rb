@@ -59,11 +59,11 @@ post '/create' do
 end
 
 # delete job
-get '/delete/:id' do |id|
-  job = Job.get(params[:id])
-  job.destroy! 
-  redirect('/list')
-end
+#get '/delete/:id' do |id|
+#  job = Job.get(params[:id])
+#  job.destroy! 
+#  redirect('/list')
+#end
 
 # view a job by id
 get '/show/:id' do

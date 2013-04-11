@@ -1,11 +1,9 @@
-<div class="container">
-<div class="row-fluid">
-    <h1>Job Detail</h1>
- 
-        
-    
+<div class="page-header">
+  <h1><%= @job.title %> :  <small><%= @job.company %></small></h1>
+</div>
     <img src="http://placehold.it/180x90&text=company+logo">
 
+<div id="job details" style="margin-top:20px;">
     <p>
     <b>ID</b>
     <%= @job.id %>
@@ -30,6 +28,11 @@
     <b>Job Description</b>
     <%= @job.description %>
     </p>
-
-</div>
+    <p>Tags: 
+        <a href="#"><span class="label label-info">Business Analyst</span></a> 
+        <a href="#"><span class="label label-info">Marketing</span></a> 
+        <a href="#"><span class="label label-info">A/B Testing</span></a>
+        | Posted By: <i class="icon-user"></i> <a href="#">Enoch Root</a> 
+        | <i class="icon-calendar"></i> Sept 16th, 2012 at 4:20 pm
+    </p>
 </div>
