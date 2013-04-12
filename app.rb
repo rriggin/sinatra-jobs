@@ -48,6 +48,12 @@ get '/new' do
   erb :new
 end
 
+# edit account 
+get '/user' do
+  @title = "My account"
+  erb :user 
+end
+
 # post handler for new job
 post '/create' do
   @job = Job.new(params[:job])
