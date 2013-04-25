@@ -1,0 +1,29 @@
+.row-fluid{:style => "margin-top:25px;"}
+  / Big Header Text
+  .row-fluid
+    %h1.text-center
+      The Kansas City Web/Tech Scene is off the Hook.
+      %br/
+      So .... We need a place to post all the Jobs.
+  / For Boxes
+  .row-fluid{:style => "margin-top:20px;"}
+    .span2
+    .well.media.span4
+      %a.pull-left{:href => "#"}
+        %i.icon-building.icon-4x
+      .media-body
+        %h4.media-heading For Companies:
+        %p Defined as: A 'Group' of people trying to hire another person to work with them.
+      %a.btn.btn-block.btn-success{:href => "new"}
+        %i.icon-pushpin.icon-large
+        \  Post Your Job for Free
+    .well.media.span4
+      %a.pull-left{:href => "#"}
+        %i.icon-user.icon-4x
+      .media-body
+        %h4.media-heading For Job Seekers:
+        %p Defined as: 'One' person trying to find a group of KC people to work with.
+      %a.btn.btn-block.btn-success{:href => "/list"}
+        %i.icon-search.icon-large
+        \  Find Yourself a Kick Ass Job
+    .span2

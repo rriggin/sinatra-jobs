@@ -1,10 +1,12 @@
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 require 'data_mapper'
+require 'sinatra-authentication'
 
 # Set up Database Connection
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
-
+use Rack::Session::Cookie, :secret => 'superdupersecret'
 
 class Job
 
@@ -32,26 +34,20 @@ end
 # index page for the site
 get '/' do
   @title = "kc.io"
-  erb :home
+  haml :home
 end
 
 # view a list of jobs
 get '/list' do
   @title = "Job List"
   @jobs = Job.all(:order => [:created_at.desc])
-  erb :list
+  haml :list
 end
 
 # create a new job 
 get '/new' do
   @title = "Post a New Job"
-  erb :new
-end
-
-# edit account 
-get '/user' do
-  @title = "My account"
-  erb :user 
+  haml :new
 end
 
 # post handler for new job
@@ -64,32 +60,13 @@ post '/create' do
   end
 end
 
-# delete job
-#get '/delete/:id' do |id|
-#  job = Job.get(params[:id])
-#  job.destroy! 
-#  redirect('/list')
-#end
-
 # view a job by id
 get '/show/:id' do
   @title = "Job Details"
   @job = Job.get(params[:id])
   if @job
-    erb :show
+    haml :show
   else
     redirect('/list')
   end
-end
-
-# create a user account 
-get '/signup' do
-  @title = "kcio Signup"
-  erb :register
-end
-
-# login to a user account
-get '/login' do
-  @title = "kcio Login"
-  erb :login
 end

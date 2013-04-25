@@ -1,0 +1,32 @@
+.page-header
+  %h1
+    = @job.title
+    \:
+    %small= @job.company
+/ <img src="http://placehold.it/180x90&text=company+logo">
+%div{:id => "job details", :style => "margin-top:20px;"}
+  %p
+    %b ID
+    = @job.id
+  %p
+    %b Title/Role
+    = @job.title
+  %p
+    %b Company Name
+    = @job.company
+  %p
+    %b Website
+    = @job.website
+  %p
+    %b Created Date
+    = @job.created_at
+  %p
+    %b Job Description
+    = @job.description
+  %p
+    Posted By:
+    %i.icon-user
+    %a{:href => "#"} Enoch Root
+    |
+    %i.icon-calendar
+    = @job.created_at

@@ -5,3 +5,4 @@ gem 'data_mapper'
 
 gem 'pg'
 gem 'dm-postgres-adapter'
+gem "sinatra-authentication"

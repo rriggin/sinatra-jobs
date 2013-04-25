@@ -1,0 +1,65 @@
+!!!
+%html
+  %head
+    %title= @title
+    / Meta
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    / Styles
+    %link{:href => "/css/bootstrap.min.css", :media => "screen", :rel => "stylesheet"}/
+    %link{:href => "../css/font-awesome.min.css", :rel => "stylesheet"}/
+    :css
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      %link{:href => "css/bootstrap-responsive.css", :rel => "stylesheet"}/
+    /
+      Le HTML5 shim, for IE6-8 support of HTML5 elements
+      \- updated in Bootstrap 2.02 to include the http:
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Le fav and touch icons
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
+    %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+  %body
+    .container
+      .row-fluid
+        .navbar.navbar-fixed-top
+          .navbar-inner
+            .container
+              %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              / <a class="brand" href="/">kc.io</a>
+              .nav-collapse
+                %ul.nav
+                  %li.active
+                    %a{:href => "/"}
+                      %i.icon-home
+                      Home
+                  %li
+                    %a{:href => "/list"} View Jobs
+                %ul.nav.pull-right
+                  %li.dropdown
+                    %a{:href => "/signup"} Create Account
+              / /.nav-collapse
+      .row-fluid
+        .span12.pagination-centered
+          %a{:href => "/"}
+            %img{:align => "middle", :height => "100", :src => "/img/logo.png", :style => "margin-top:25px;", :width => "250"}/
+      = yield
+      .well{:style => "margin-top:65px;"}
+        %p kc.io.  Rights and Stuff.
+      #debug
+        %p
+          The time is #{Time.now.strftime("%u:%M:%S  %p")}.
+        %p
+          Sinatra version #{Sinatra::VERSION}.
+    %script{:src => "http://code.jquery.com/jquery.js"}
+    %script{:src => "js/bootstrap.min.js"}
+  %html/
