@@ -8,6 +8,9 @@ require 'haml'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
 use Rack::Session::Cookie, :secret => 'superdupersecret'
 
+# Set up Sinatra Auth Views
+set :sinatra_authentication_view_path, Pathname(__FILE__).dirname.expand_path + "views/users"
+
 class Job
 
   include DataMapper::Resource
@@ -33,7 +36,7 @@ end
 
 # index page for the site
 get '/' do
-  @title = "kc.io"
+  @title = "kc.io - Kansas City Marketing & Tech Jobs"
   haml :home
 end
 
