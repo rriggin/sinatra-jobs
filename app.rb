@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 require 'sinatra-authentication'
+require 'haml'
 
 # Set up Database Connection
 DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
