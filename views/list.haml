@@ -21,6 +21,6 @@
         %td
           %a{:href => "http://#{job.website}"}= job.website
         %td
-          %a{:href => "/"}
+          %a{:href => "mailto:#{job.contact_email}?subject=#{job.title}"}
             Apply
             %i.icon-envelope
