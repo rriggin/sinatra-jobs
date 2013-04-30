@@ -40,6 +40,12 @@ get '/' do
   haml :home
 end
 
+# about page
+get '/about' do
+  @title = "kc.io - About"
+  haml :about
+end
+
 # view a list of jobs
 get '/list' do
   @title = "Job List"
