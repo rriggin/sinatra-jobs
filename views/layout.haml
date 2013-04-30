@@ -30,36 +30,38 @@
       .row-fluid
         .navbar.navbar-fixed-top
           .navbar-inner
-            .container
-              %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+            .container-fluid
+              %a.btn.btn-navbar{ "data-toggle".to_sym => "collapse", "data-target".to_sym => ".nav-collapse"}
                 %span.icon-bar
                 %span.icon-bar
                 %span.icon-bar
-              / <a class="brand" href="/">kc.io</a>
               .nav-collapse
                 %ul.nav
-                  %li.active
-                    %a{:href => "/"}
-                      %i.icon-home
-                      Home
                   %li
-                    %a{:href => "/list"} View Jobs
-                %ul.nav.pull-right
-                  %li.dropdown
-                    %a{:href => "/signup"} Create Account
-              / /.nav-collapse
+                    %a{:href => '/'} Home
+                  %li
+                    %a{:href => '/list'}View Jobs
+                  %li 
+                    -if logged_in?
+                      %a{:href => '/new' }Post a Job
+                    -else
+                      %a{:href => '/signup' }Signup
+                %p.navbar-text.pull-right
+                  -if logged_in?
+                    %a{:href => "/logout" }Logout 
+                  -else 
+                    %a{:href => '/login' }Login
       .row-fluid
         .span12.pagination-centered
           %a{:href => "/"}
             %img{:align => "middle", :height => "100", :src => "/img/logo.png", :style => "margin-top:25px;", :width => "250"}/
       = yield
+      
       .well{:style => "margin-top:65px;"}
         %p kc.io.  Rights and Stuff.
       #debug
-        %p
-          The time is #{Time.now.strftime("%u:%M:%S  %p")}.
-        %p
-          Sinatra version #{Sinatra::VERSION}.
+        %p The time is #{Time.now.strftime("%u:%M:%S  %p")}.
+        %p Sinatra version #{Sinatra::VERSION}.
     %script{:src => "http://code.jquery.com/jquery.js"}
     %script{:src => "js/bootstrap.min.js"}
   %html/

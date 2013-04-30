@@ -6,7 +6,7 @@
 / <img src="http://placehold.it/180x90&text=company+logo">
 %div{:id => "job details", :style => "margin-top:20px;"}
   %p
-    %b ID
+    %b Job ID
     = @job.id
   %p
     %b Title/Role
@@ -18,15 +18,11 @@
     %b Website
     = @job.website
   %p
-    %b Created Date
-    = @job.created_at
-  %p
     %b Job Description
     = @job.description
   %p
-    Posted By:
-    %i.icon-user
-    %a{:href => "#"} Enoch Root
-    |
+    %b Date Posted:
     %i.icon-calendar
     = @job.created_at
+  %p
+    %a.btn.btn-primary.btn-large{:href => "mailto:#{@job.contact_email}?subject=#{@job.title}"} Apply for this Job

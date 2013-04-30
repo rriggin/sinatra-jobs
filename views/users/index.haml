@@ -2,9 +2,10 @@
   %h1.page_title Users
   %table
     %tr
-      %th
+      %th email
       - if current_user.admin?
         %th permission level
+      %th actions
     - @users.each do |user|
       %tr
         %td
