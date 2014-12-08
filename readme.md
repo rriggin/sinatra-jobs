@@ -1,6 +1,6 @@
-#kc.io
+#sinatra-jobs
 
-kc.io is a simple jobs app written in ruby
+This is a simple jobs app written in ruby
 
 It is a work in progress.  Hack it up all you want. 
 
@@ -17,15 +17,16 @@ Tools used:
 
 Key gems:
 
-- sinatra-authentication
+- sinatra-authentication *used for user authentication*
 
 #ToDo
 
 - clean up the user account views, add bootstrapping, etc
+- make contact email field required on create new job function
 - tie user model to jobs model with one > many relationship
 - fix responsive layout elements
 - add tagging structure with datamapper-tags
-- add a geographic model (areas:  i.e, midtown, plaza, downtown, etc)
+- add a geographic model (areas:  i.e, city/state, zip, region) **maybe use tags for this?
 - add a featured job banner in home.haml
 
 #Roadmap

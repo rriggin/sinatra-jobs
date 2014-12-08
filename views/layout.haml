@@ -56,11 +56,11 @@
       .row-fluid
         .span12.pagination-centered
           %a{:href => "/"}
-            %img{:align => "middle", :height => "100", :src => "/img/logo.png", :style => "margin-top:25px;", :width => "250"}/
+            /%img{:align => "middle", :height => "100", :src => "/img/logo.png", :style => "margin-top:25px;", :width => "250"}/
       = yield
       
       .well{:style => "margin-top:65px;"}
-        %p kc.io.  Rights and Stuff.
+        %p Rights and Stuff.
       #debug
         %p The time is #{Time.now.strftime("%u:%M:%S  %p")}.
         %p Sinatra version #{Sinatra::VERSION}.
