@@ -36,13 +36,13 @@ end
 
 # index page for the site
 get '/' do
-  @title = "kc.io - Kansas City Marketing & Tech Jobs"
+  @title = "Marketing & Tech Jobs"
   haml :home
 end
 
 # about page
 get '/about' do
-  @title = "kc.io - About"
+  @title = "About"
   haml :about
 end
 
