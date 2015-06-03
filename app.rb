@@ -5,7 +5,7 @@ require 'sinatra-authentication'
 require 'haml'
 
 # Set up Database Connection
-DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/kciodev')
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/sinatra_jobs')
 use Rack::Session::Cookie, :secret => 'superdupersecret'
 
 # Set up Sinatra Auth Views
